@@ -9,6 +9,7 @@ initMap = ->
   geocoder = new google.maps.Geocoder()
   geocoder.geocode {'address':address}, (results, status) ->
     return alert(status) unless status == 'OK'
+    console.log address
     map = new google.maps.Map(document.getElementById('map'), {
       zoom:4
       center: results[0].geometry.location
