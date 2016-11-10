@@ -35,6 +35,7 @@ initMap = ->
 
     distance = new google.maps.DistanceMatrixService()
     distance.getDistanceMatrix {origins: [results[0].geometry.location], destinations: [store_location], travelMode: 'DRIVING'}, (result, status) ->
+      $("#tfd").empty()
       $("#tfd").append(result['rows'][0]['elements'][0]['duration']['text'])
 
 
