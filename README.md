@@ -25,6 +25,7 @@ Use the following user credentials when logging in(or register a new user, but t
 Writing this at: 16:16 Nov 10  
 All in all it's taken me about 7 hours to get to this point, though I feel like there's something missing to my testing.  
 Devise made it a bit more complicated to do testing compared to if I hadn't used it.  
+Finally got controller tests to work.  
 My version ended up being more dynamic in that a user represents a store, so you could technically have as many stores as you like with all different suppliers etc.  
 It doesn't make it harder for a single store to use the application though.  
 
