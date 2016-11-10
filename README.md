@@ -61,4 +61,11 @@ Then setup the relational table and add the relations to the scaffold models
 ##Design
 For the design we use Bootstrap and ajax to load and send forms in a fast and user friendly manner
 
-**Planning done 09:58 Nov 10, Total Time ~40 minutes
+Planning done 09:58 Nov 10, Total Time ~40 minutes
+
+###Setup
+After cloning the repo do:  
+    bundle install
+    rake db:migrate
+    rake db:seed
+    
