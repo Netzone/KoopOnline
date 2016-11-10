@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class SupplierTest < ActiveSupport::TestCase
-   test "the truth" do
-     assert true
+   test "should not create new supplier without address" do
+     supplier = Supplier.new
+     assert_not supplier.save
    end
 end
