@@ -35,27 +35,27 @@ Definitely using Devise for this, that will allow make the application more secu
 ##Database Planning
 
 We need the user table of course, devise will provide that for us, so we need to add store address to that table. What format does google maps take on their address? Assuming the application will be used only in Sweden (Or Europe), our address format should be "Street Address, City, Country"  
-At this point we have our projected user table - User(Devise, Address:String)  
+At this point we have our projected user table - **User(Devise, Address:String)**  
 Next we need a table to store our suppliers, so let's do something like;  
-Suppliers(Name:String, Address:String, Email:String, Phone:String, Website:String)  
+**Suppliers(Name:String, Address:String, Email:String, Phone:String, Website:String)**  
 Then we need a table for the types of things the supplier is delivering, I'll call that table tags.  
-Tags(Tag:String)  
+**Tags(Tag:String)**  
 And to connect the two we need a relational table between Tags and Suppliers  
-Tags_Suppliers(tag_id:String, supplier_id:String)
+**Tags_Suppliers(tag_id:String, supplier_id:String)**
 So  
-Suppliers has_many :tags through: tags_suppliers  
-Tags has_many :suppliers through: tags_suppliers  
+**Suppliers has_many :tags through: tags_suppliers**  
+**Tags has_many :suppliers through: tags_suppliers**  
 
 At this point we probably have most of the database needed to start doing some scaffolding  
-User(Devise, Address:String)  
+**User(Devise, Address:String)  
 Suppliers(Name:String, Address:String, Email:String, Phone:String, Website:String)  
 Tags(Tag:String)  
-Tags_Suppliers(tag_id:String, supplier_id:String)  
+Tags_Suppliers(tag_id:String, supplier_id:String)**  
 
 ##Startup commands (More specifically scaffolds)
 This happens after devise is setup --  
-rails g scaffold Suppliers name:string address:string email:string phone:string website:string  
-rails g scaffold Tags tag:string  
+**rails g scaffold Suppliers name:string address:string email:string phone:string website:string  
+rails g scaffold Tags tag:string**  
 Then setup the relational table and add the relations to the scaffold models 
 
 ##Design
