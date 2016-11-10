@@ -1,4 +1,5 @@
 class Supplier < ApplicationRecord
+  belongs_to :user
   has_many :tags_suppliers
   has_many :tags, :through => :tags_suppliers
 
