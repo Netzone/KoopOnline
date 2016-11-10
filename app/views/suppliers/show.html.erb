@@ -31,7 +31,7 @@
     <%= tag.tag %>
   <% end %>
 </p>
-<div id="map" address="<%= @supplier.address %>,<%= @supplier.city %>"></div>
+<div id="map" supplier_address="<%= @supplier.address %>,<%= @supplier.city %>" store_address="<%= current_user.address %>,<%= current_user.city %>"></div>
 
 <%= link_to 'Edit', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>

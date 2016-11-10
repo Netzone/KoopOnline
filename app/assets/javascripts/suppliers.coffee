@@ -4,7 +4,7 @@
 document.addEventListener 'turbolinks:load', ->
   initMap()
 initMap = ->
-  address = $('#map').attr('address')
+  address = $('#map').attr('supplier_address')
   return false unless address
   geocoder = new google.maps.Geocoder()
   geocoder.geocode {'address':address}, (results, status) ->
