@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20161110115258) do
     t.string   "email"
     t.string   "phone"
     t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "city"
+    t.integer  "user_id",    default: 0, null: false
   end
 
   create_table "tags", force: :cascade do |t|
