@@ -25,11 +25,11 @@ initMap = ->
       position: results[0].geometry.location,
       map: map
     })
-    directionsService = new google.maps.DirectionsSerice()
+    directionsService = new google.maps.DirectionsService()
     directionsDisplay = new google.maps.DirectionsRenderer()
     directionsDisplay.setMap(map)
     #calcRoute(results[0].geometry.location, store_location)
     directionsService.route {origin: results[0].geometry.location,destination: store_location, travelMode: 'DRIVING'}, (result, status) ->
       return alert(status) unless status == 'OK'
-      directionsDisplay.setDirections(reulst)
+      directionsDisplay.setDirections(result)
 
