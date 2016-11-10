@@ -5,4 +5,9 @@ class SupplierTest < ActiveSupport::TestCase
      supplier = Supplier.new({name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d'})
      assert_not supplier.save
    end
+
+  test "should create new supplier" do
+    supplier = Supplier.new({name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id})
+    assert supplier.save
+  end
 end
