@@ -3,6 +3,7 @@ require 'test_helper'
 class SuppliersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @supplier = suppliers(:one)
+    current_user = User.find(1)
   end
 
   test "should get index" do
