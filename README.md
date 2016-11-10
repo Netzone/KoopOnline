@@ -27,9 +27,7 @@ All in all it's taken me about 7 hours to get to this point, though I feel like 
 Devise made it a bit more complicated to do testing compared to if I hadn't used it.  
 My version ended up being more dynamic in that a user represents a store, so you could technically have as many stores as you like with all different suppliers etc.  
 It doesn't make it harder for a single store to use the application though.  
-#####For some reason I can't get tests to work with devise at all, and any controller tests gives me the error:    
-    NoMethodError: undefined method `env' for nil:NilClass
-Which I haven't been able to solve yet.
+
  
 ##Initial planning - Start 09:17 Nov 10
 
