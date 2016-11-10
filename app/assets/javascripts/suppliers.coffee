@@ -33,3 +33,8 @@ initMap = ->
       return alert(status) unless status == 'OK'
       directionsDisplay.setDirections(result)
 
+    distance = new google.maps.DistanceMatrixService()
+    distance.getDistanceMatrix {origins: [results[0].geometry.location], destinations: [store_location], travelMode: 'DRIVING'}, (result, status) ->
+      $("#tfd").append(result['rows'][0]['elements'][0]['duration']['text'])
+
+

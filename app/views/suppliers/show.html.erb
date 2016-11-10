@@ -31,7 +31,12 @@
     <%= tag.tag %>
   <% end %>
 </p>
+<p>
+  <strong>Time for delivery truck: </strong> <div id="tfd"></div>
+  <strong>Projected route:</strong>
+</p>
 <div id="map" supplier_address="<%= @supplier.address %>,<%= @supplier.city %>" store_address="<%= current_user.address %>,<%= current_user.city %>"></div>
+
 
 <%= link_to 'Edit', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>
