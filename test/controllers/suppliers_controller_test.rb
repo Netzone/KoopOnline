@@ -2,13 +2,14 @@ require 'test_helper'
 
 class SuppliersControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::ControllerHelpers
+
   setup do
     @supplier = Supplier.first
-    sign_in User.first
+    sign_in(user: User.find(1), password:"123greetings")
   end
 
-  test "should get index" do
-    get suppliers_path
+  it "should get index" do
+    get '/'
     assert_response :success
   end
 
