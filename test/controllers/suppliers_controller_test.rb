@@ -1,49 +1,50 @@
 require 'test_helper'
 
 class SuppliersControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::ControllerHelpers
   setup do
-    @supplier = suppliers(:one)
-    current_user = User.find(1)
+    @supplier = Supplier.first
+    sign_in User.first
   end
 
   test "should get index" do
-    get suppliers_url
+    get suppliers_path
     assert_response :success
   end
 
   test "should get new" do
-    get new_supplier_url
+    get new_supplier_path
     assert_response :success
   end
 
   test "should create supplier" do
     assert_difference('Supplier.count') do
-      post suppliers_url, params: { supplier: { address: @supplier.address, email: @supplier.email, name: @supplier.name, phone: @supplier.phone, website: @supplier.website } }
+      post supplier_path, params: { supplier: { name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id } }
     end
 
-    assert_redirected_to supplier_url(Supplier.last)
+    assert_redirected_to supplier_path(Supplier.last)
   end
 
   test "should show supplier" do
-    get supplier_url(@supplier)
+    get supplier_path(@supplier)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_supplier_url(@supplier)
+    get edit_supplier_path(@supplier)
     assert_response :success
   end
 
   test "should update supplier" do
-    patch supplier_url(@supplier), params: { supplier: { address: @supplier.address, email: @supplier.email, name: @supplier.name, phone: @supplier.phone, website: @supplier.website } }
-    assert_redirected_to supplier_url(@supplier)
+    patch supplier_path(@supplier), params: { supplier: { name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id } }
+    assert_redirected_to supplier_path(@supplier)
   end
 
   test "should destroy supplier" do
     assert_difference('Supplier.count', -1) do
-      delete supplier_url(@supplier)
+      delete supplier_path(@supplier)
     end
 
-    assert_redirected_to suppliers_url
+    assert_redirected_to suppliers_path
   end
 end

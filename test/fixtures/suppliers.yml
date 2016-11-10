@@ -6,10 +6,5 @@ one:
   email: MyString
   phone: MyString
   website: MyString
-
-two:
-  name: MyString
-  address: MyString
-  email: MyString
-  phone: MyString
-  website: MyString
+  city: jkpg
+  user_id: 1
