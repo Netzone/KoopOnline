@@ -12,7 +12,6 @@ initMap = ->
       zoom:4
       center: results[0].geometry.location
     })
-    map.setCenter(results[0].geometry.location)
     marker = new google.maps.Marker({
       position: results[0].geometry.location,
       map: map
