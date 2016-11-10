@@ -5,11 +5,15 @@ document.addEventListener 'turbolinks:load', ->
   initMap()
 initMap = ->
   address = $('#map').attr('address')
-  map = new google.maps.Map($('#map'), {
-    zoom:4,
-    center: address
-  })
-  marker = new google.maps.Marker({
-    position: address,
-    map: map
-  })
+  geocoder = new google.maps.Geocoder()
+  geocoder.geocode {'address':address}, (results, status) ->
+    return alert(status) unless status == 'OK'
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom:4
+      center: results[0].geometry.location
+    })
+    map.setCenter(results[0].geometry.location)
+    marker = new google.maps.Marker({
+      position: results[0].geometry.location,
+      map: map
+    })
