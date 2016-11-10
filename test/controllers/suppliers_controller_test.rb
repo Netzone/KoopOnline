@@ -1,10 +1,14 @@
 require 'test_helper'
 
 class SuppliersControllerTest < ActionDispatch::IntegrationTest
-
+  def sign_in(email, password)
+    post user_session_path \
+      "user[email]"    => email,
+      "user[password]" => password
+  end
   setup do
     @supplier = Supplier.first
-    sign_in(user: users(:tom), password:"123greetings")
+    sign_in(users(:tom).email, "123greetings")
   end
 
   test "should get index" do
@@ -19,10 +23,10 @@ class SuppliersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create supplier" do
     assert_difference('Supplier.count') do
-      post supplier_path, params: { supplier: { name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id } }
+      post suppliers_path, params: { supplier: { name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id } }
     end
 
-    assert_redirected_to supplier_path(Supplier.last)
+    assert_redirected_to supplier_url(Supplier.last)
   end
 
   test "should show supplier" do
