@@ -1,6 +1,6 @@
 <h1>Suppliers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,18 +16,18 @@
   <tbody>
     <% @suppliers.each do |supplier| %>
       <tr>
-        <td><%= link_to supplier.name, supplier %> | </td>
-        <td><%= supplier.address %> | </td>
-        <td><%= supplier.email %> | </td>
-        <td><%= supplier.phone %> | </td>
-        <td><%= supplier.website %> | </td>
+        <td><%= link_to supplier.name, supplier %></td>
+        <td><%= supplier.address %></td>
+        <td><%= supplier.email %></td>
+        <td><%= supplier.phone %></td>
+        <td><%= supplier.website %></td>
         <td>
           <% supplier.tags.each do |tag| %>
             <%= tag.tag %>
           <% end %>
         </td>
-        <td> | <%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-        <td> | <%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+        <td><%= link_to 'Remove', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
