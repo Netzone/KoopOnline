@@ -7,7 +7,7 @@ class SupplierTest < ActiveSupport::TestCase
    end
 
   test "should create new supplier" do
-    supplier = Supplier.new({name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id})
+    supplier = Supplier.new({name:'test', email:'d', address:'d', city:'d', website:'d', phone:'d', user_id: users(:tom).id, all_tags:'meat,deli'})
     assert supplier.save
   end
   test "should not create new supplier without address" do
@@ -34,4 +34,5 @@ class SupplierTest < ActiveSupport::TestCase
      supplier = Supplier.new({name:'test', email:'d', address:'d', city:'d', website:'d', phone:'', user_id: users(:tom).id})
      assert_not supplier.save
    end
+
 end
