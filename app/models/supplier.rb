@@ -4,13 +4,13 @@ class Supplier < ApplicationRecord
 
   #Virtual attributes -- First time using
   def all_tags=(tags)
-    self.tags = tags.split(",").map do |name|
+    self.tags = tags.split(",").map do |tag|
       Tag.where(tag: tag.strip).first_or_create!
     end
   end
 
   def all_tags
-    self.tags.map(&tag).join(", ")
+    self.tags.map(&:tag).join(", ")
   end
 
 end
