@@ -6,6 +6,7 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
   def sign_in(user)
+    puts user.email
     post user_session_path \
       "user[email]"    => user.email,
       "user[password]" => user.password
