@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #Set suppliers#index as root route
+  root 'suppliers#index'
   resources :tags
   resources :suppliers
   devise_for :users
