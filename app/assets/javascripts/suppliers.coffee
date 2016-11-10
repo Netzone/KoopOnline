@@ -8,7 +8,6 @@ initMap = ->
   store_address = $("#map").attr('store_address')
   store_location = null
   return false unless address && store_address
-  directionsService = new google.maps.DirectionsSerice()
 
   geocoder = new google.maps.Geocoder()
   geocoder.geocode {'address':store_address}, (results, status) ->
@@ -17,7 +16,6 @@ initMap = ->
 
   geocoder.geocode {'address':address}, (results, status) ->
     return alert(status) unless status == 'OK'
-    directionsDisplay = new google.maps.DirectionsRenderer()
     console.log address
     map = new google.maps.Map(document.getElementById('map'), {
       zoom:7
@@ -27,9 +25,11 @@ initMap = ->
       position: results[0].geometry.location,
       map: map
     })
+    directionsService = new google.maps.DirectionsSerice()
+    directionsDisplay = new google.maps.DirectionsRenderer()
     directionsDisplay.setMap(map)
     #calcRoute(results[0].geometry.location, store_location)
-    directionsService.route {origin: results[0].geometry.location,destination: store_location}, (result, status) ->
+    directionsService.route {origin: results[0].geometry.location,destination: store_location, travelMode: 'DRIVING'}, (result, status) ->
       return alert(status) unless status == 'OK'
       directionsDisplay.setDirections(reulst)
 
