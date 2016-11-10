@@ -9,6 +9,12 @@
     rake db:seed
     rails s
 
+####User seed data (for login etc.):
+    email: 'koop@koop.se',
+    password: 'admin123',
+    address:'Vintergatan 7',
+    city: 'Jönköping'
+    
 ##Heroku
 https://secure-wildwood-20129.herokuapp.com  
 Use the following user credentials when logging in(or register a new user, but then the seed suppliers won't be there):  
