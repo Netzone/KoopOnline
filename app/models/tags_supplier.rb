@@ -1,0 +1,2 @@
+class TagsSupplier < ApplicationRecord
+end
