@@ -32,11 +32,11 @@
   <% end %>
 </p>
 <p>
-  <strong>Time for delivery truck: </strong> <div id="tfd"></div>
+  <strong>Estimated time for delivery truck to arrive: </strong> <div id="tfd"></div>
   <strong>Projected route:</strong>
 </p>
 <div id="map" supplier_address="<%= @supplier.address %>,<%= @supplier.city %>" store_address="<%= current_user.address %>,<%= current_user.city %>"></div>
 
 
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Edit Supplier Data', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>
