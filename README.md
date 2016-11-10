@@ -64,6 +64,9 @@ For the design we use Bootstrap and ajax to load and send forms in a fast and us
 Planning done 09:58 Nov 10, Total Time ~40 minutes
 
 ###Setup
+####Versions:
+  Ruby: 2.3.1
+  Rails: 5.0.0.1
 After cloning the repo do:  
     bundle install
     rake db:migrate
